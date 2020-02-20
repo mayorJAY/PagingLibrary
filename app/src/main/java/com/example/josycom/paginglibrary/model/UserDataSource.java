@@ -13,8 +13,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UserDataSource extends PageKeyedDataSource<Long, User> {
-    private static int PAGE_SIZE = 6;
-    private static long FIRST_PAGE = 1;
+    public static int PAGE_SIZE = 10;
+    public static long FIRST_PAGE = 1;
 
     // Load the first page of the data used to initialize the RecyclerView
     @Override

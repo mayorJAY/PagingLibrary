@@ -2,13 +2,14 @@ package com.example.josycom.paginglibrary.network;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiServiceBuilder {
 
     // Base URL
-    private static final String URL = "https://reqres.in/api";
+    private static final String URL = "https://reqres.in/api/";
     // Create Logger
     private static HttpLoggingInterceptor logger = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
     // OkHttp client
