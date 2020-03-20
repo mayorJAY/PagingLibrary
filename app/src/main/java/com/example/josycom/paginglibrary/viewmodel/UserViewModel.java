@@ -12,7 +12,6 @@ import com.example.josycom.paginglibrary.model.UserDataSourceFactory;
 public class UserViewModel extends ViewModel {
 
     public LiveData<PagedList<User>> userPagedList;
-    private LiveData<UserDataSource> liveDataSource;
 
     public UserViewModel(){
         init();
@@ -20,7 +19,7 @@ public class UserViewModel extends ViewModel {
 
     private void init() {
         UserDataSourceFactory itemDataSourceFactory = new UserDataSourceFactory();
-        liveDataSource = itemDataSourceFactory.userLiveDataSource;
+        LiveData<UserDataSource> liveDataSource = itemDataSourceFactory.userLiveDataSource;
         PagedList.Config config = new PagedList.Config.Builder()
                 .setEnablePlaceholders(false)
                 .setPageSize(UserDataSource.PAGE_SIZE)
