@@ -16,9 +16,11 @@ import com.bumptech.glide.Glide;
 import com.example.josycom.paginglibrary.R;
 import com.example.josycom.paginglibrary.model.User;
 
+import java.util.Objects;
+
 public class UserAdapter extends PagedListAdapter<User, UserAdapter.UserViewHolder> {
 
-    public UserAdapter(){
+    UserAdapter(){
         super(USER_COMPARATOR);
     }
     @NonNull
@@ -30,16 +32,16 @@ public class UserAdapter extends PagedListAdapter<User, UserAdapter.UserViewHold
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder userViewHolder, int i) {
-        userViewHolder.bind(getItem(i));
+        userViewHolder.bind(Objects.requireNonNull(getItem(i)));
 
     }
 
-    public class UserViewHolder extends RecyclerView.ViewHolder {
+    static class UserViewHolder extends RecyclerView.ViewHolder {
         private TextView userName, userEmail;
         private ImageView userPic;
 
 
-        public UserViewHolder(@NonNull View itemView) {
+        UserViewHolder(@NonNull View itemView) {
             super(itemView);
             userName = itemView.findViewById(R.id.user_name);
             userEmail = itemView.findViewById(R.id.user_email);

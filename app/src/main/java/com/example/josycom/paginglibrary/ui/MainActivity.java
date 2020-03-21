@@ -2,7 +2,6 @@ package com.example.josycom.paginglibrary.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         UserViewModel itemViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        itemViewModel.userPagedList.observe(this, userAdapter::submitList);
+        itemViewModel.getUserPagedList().observe(this, userAdapter::submitList);
         recyclerView.setAdapter(userAdapter);
     }
 }
